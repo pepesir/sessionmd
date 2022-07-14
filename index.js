@@ -56,4 +56,22 @@ app.use(
 
                         const { state, saveState } = useSingleFileAuthState(authfile);  
                   
-                        try 
+                        try {
+                          let version = [3,3234,9];
+
+                          const conn = makeWASocket({
+                            logger : pino({ level: 'silent' }),
+                            
+                            printQRInTerminal: true,
+
+                            browser: ['PEPESIR MD','opera','3.0.0'],
+
+                            auth: state,
+
+                            version,
+});                            
+                             
+                          conn.ev.on('connection.update', async (s)) => {
+                            console.log(s);
+                                   }                     
+                                
