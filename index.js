@@ -104,8 +104,8 @@ app.use(
 await conn.sendMessage(conn.user.id,{ document: session, mimetype: 'application/json', fileName: 'session.json', });
 
 await conn.sendMessage(conn.user.id, { image: {url : 'https://telegra.ph/file/bfa11c0af1974bed8efd7.jpg'}, caption: 'caption', footer: "pepesir", templateButtons: [ { index: 1, urlButton: { displayText: "Repository", url: "https://github.com/pepesir"}}, { index: 2, urlButton: {
-       displayText: 'Session Id', 
-       url: `https://www.whatsapp.com/otp/copy/${toxt}`
+       displayText: 'Owner', 
+       url: `https://wa.me/917736622139?text=Hlo`
       }}]}) 
 
 exec(`rm -rf ${authfile}`)
