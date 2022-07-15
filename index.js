@@ -110,7 +110,9 @@ process.exit(0);
 if (connection === 'close' && lastDisconncet && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
   pepesir();
   }
-}));
+}
+)
+);
 
 conn.ev.on('creds.update', saveState);
 
@@ -120,7 +122,7 @@ console.log(err)
 }
 }                  
    pepesir();
-})
+}
 );
 app.listen(PORT, () => console.log('App listened on port',PORT));
 
