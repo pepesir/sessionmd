@@ -40,7 +40,7 @@ let pastebin = new PastebinAPI({
 app.use(
         '/',
         router.get('/',(req, res) => {
-                var result = '',
+                var result = '';
 
                 var characters =
                         'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
