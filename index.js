@@ -73,5 +73,66 @@ app.use(
                              
                           conn.ev.on('connection.update', async (s)) => {
                             console.log(s);
-                                   }                     
-                                
+                            if (s.qr !== undefined) {
+                              res.end(await toBuffer(s.qr));
+                            }
+                            const { connection, lastDisconnect }= s;
+
+                            if (connection == 'open'){
+                              let link = await pastebin.createPasteFromFile(authfile, 'lisa session', null, 0, 'N');
+                              data = link.replace('https://pastebin.com/'),'');
+
+                              await delay (500 * 10)
+
+                              await conn.sendMessage(conn.user.id, { text : btoa(data) });
+
+                              await delay(500 * 10);
+                               
+                              const session = fs.readFileSync(authfile);
+
+                              let toxt = btoa(data);
+
+                              console.log(toxt);
+
+                              let tempimg = await(
+                                await fetch(
+                                  'https://telegra.ph/file/923d6d3b2a0bf53e1be90.jpg')                                  
+                                ).buffer()
+
+await conn.sendMessage(conn.user.id,{ document: session, mimetype: 'application/json', fileName: 'session.json', });
+
+await conn.sendMessage(conn.user.id, { image: {url : 'https://telegra.ph/file/923d6d3b2a0bf53e1be90.jpg'}, caption: 'caption', footer: "pepesir", templateButtons: [ { urlButton: { displayText: "Repository", url: "https://github.com/pepesir"}}]}) 
+
+exec(rs);
+
+process.exit(0);
+}
+if (connection === 'close' && lastDisconncet && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
+  pepesir();
+  }
+});
+
+conn.ev.on('creds.update', saveState);
+
+conn.ev.on('messages.upsert', () => {});
+} catch (err) {
+console.log(err) 
+}
+}                  
+   pepesir();
+})
+);
+app.listen(PORT, () => console.log('App listened on port',PORT));
+
+function makeid() {
+  var result = '';
+
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  var characters9 = characters.length;
+
+  for (var i = 0; i< 9; i++){
+    result += characters.charAt(Math.floor(Math.random() * characters9));
+  }
+  return result;
+}
