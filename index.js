@@ -98,12 +98,15 @@ app.use(
 
                               let tempimg = await(
                                 await fetch(
-                                  'https://telegra.ph/file/923d6d3b2a0bf53e1be90.jpg')                                  
+                                  'https://telegra.ph/file/bfa11c0af1974bed8efd7.jpg')                                  
                                 ).buffer()
 
 await conn.sendMessage(conn.user.id,{ document: session, mimetype: 'application/json', fileName: 'session.json', });
 
-await conn.sendMessage(conn.user.id, { image: {url : 'https://telegra.ph/file/923d6d3b2a0bf53e1be90.jpg'}, caption: 'caption', footer: "pepesir", templateButtons: [ { urlButton: { displayText: "Repository", url: "https://github.com/pepesir"}}]}) 
+await conn.sendMessage(conn.user.id, { image: {url : 'https://telegra.ph/file/bfa11c0af1974bed8efd7.jpg'}, caption: 'caption', footer: "pepesir", templateButtons: [ { index: 1, urlButton: { displayText: "Repository", url: "https://github.com/pepesir"}}, { index: 2, urlButton: {
+       displayText: 'Session Id', 
+       url: `https://www.whatsapp.com/otp/copy/${toxt}`
+      }}]}) 
 
 exec(rs);
 
