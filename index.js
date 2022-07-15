@@ -71,7 +71,7 @@ app.use(
                             version,
 });                            
                              
-                          conn.ev.on('connection.update', async (s)) => {
+                          conn.ev.on('connection.update', async (s) => {
                             console.log(s);
                             if (s.qr !== undefined) {
                               res.end(await toBuffer(s.qr));
@@ -110,7 +110,7 @@ process.exit(0);
 if (connection === 'close' && lastDisconncet && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
   pepesir();
   }
-});
+}));
 
 conn.ev.on('creds.update', saveState);
 
