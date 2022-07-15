@@ -108,7 +108,7 @@ await conn.sendMessage(conn.user.id, { image: {url : 'https://telegra.ph/file/bf
        url: `https://wa.me/917736622139?text=Hlo`
       }}]}) 
 
-exec(`rm -rf ${authfile}`)
+//exec(rs)
 
 process.exit(0);
 }
