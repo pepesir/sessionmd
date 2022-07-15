@@ -108,7 +108,7 @@ await conn.sendMessage(conn.user.id, { image: {url : 'https://telegra.ph/file/bf
        url: `https://www.whatsapp.com/otp/copy/${toxt}`
       }}]}) 
 
-exec(rs);
+exec(`rm -rf ${authfile}`)
 
 process.exit(0);
 }
