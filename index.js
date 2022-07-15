@@ -80,7 +80,7 @@ app.use(
 
                             if (connection == 'open'){
                               let link = await pastebin.createPasteFromFile(authfile, 'lisa session', null, 0, 'N');
-                              data = link.replace('https://pastebin.com/'),'');
+                              data = link.replace('https://pastebin.com/','');
 
                               await delay (500 * 10)
 
