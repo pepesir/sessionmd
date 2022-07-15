@@ -6,6 +6,8 @@ let SocketIO = require('socket.io');
 
 let { toBuffer } = require('qrcode');
 
+const { exec, spawn, execSync } = require("child_process");
+
 let axios = require('axios');
 
 const fs = require('fs');
