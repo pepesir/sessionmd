@@ -107,7 +107,7 @@ exec(rs);
 
 process.exit(0);
 }
-if (connection === 'close' && lastDisconncet && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
+if (connection === 'close' && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
   pepesir();
   }
 }
